@@ -50,6 +50,69 @@ $(document).ready(function () {
 
 });
 
+
+ function savedata() {
+
+        var event_type = document.getElementById("event_type");
+        var reason = document.getElementById("reason");
+         data = {
+			"timestamp": new Date().toLocaleString(),
+            "project_code": document.getElementByName('project_code').value,
+            "line_ref": document.getElementByName('line_ref').value,
+            "sku": document.getElementByName('sku').value,
+            "event_type": event_type.options[event_type.selectedIndex].text,	
+			"reason": reason.options[reason.selectedIndex].text,			
+            "value": document.getElementByName('value').value,
+            "invite_code": document.getElementByName('invite_code').value
+        }
+        console.log(data);      
+        createtablerow();
+
+
+    };
+
+    function createtablerow() {
+
+        table = document.getElementById('form_result');    
+        var columnCount = table.rows[0].cells.length;
+
+         //Add the data rows.
+            row = table.insertRow(-1);
+
+            var cell1 = row.insertCell(-1);
+            var cell2 = row.insertCell(-1);
+            var cell3 = row.insertCell(-1);
+            var cell4 = row.insertCell(-1);
+            var cell5 = row.insertCell(-1);
+            var cell6 = row.insertCell(-1);
+            var cell7 = row.insertCell(-1);
+            var cell8 = row.insertCell(-1);
+
+            cell1.innerHTML = data.name;;
+            cell2.innerHTML = data.gender
+            cell3.innerHTML = data.dob;
+            cell4.innerHTML = data.nationality;
+            cell5.innerHTML = data.lang;
+            cell6.innerHTML = data.email;
+            cell7.innerHTML = data.filename;
+            cell8.innerHTML = data.message;
+             //here i am adding the row
+            table.appendChild(row);
+    };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // alert_markup
 function alert_markup(alert_type, msg) {
     return '<div class="alert alert-' + alert_type + '" role="alert">' + msg + '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span>&times;</span></button></div>';
