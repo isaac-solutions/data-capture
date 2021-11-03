@@ -52,7 +52,6 @@ $(document).ready(function () {
 
 
  function savedata() {
-
         var event_type = document.getElementById("event_type");
         var reason = document.getElementById("reason");
          data = {
