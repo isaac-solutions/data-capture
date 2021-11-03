@@ -88,14 +88,14 @@ $(document).ready(function () {
             var cell7 = row.insertCell(-1);
             var cell8 = row.insertCell(-1);
 
-            cell1.innerHTML = data.name;;
-            cell2.innerHTML = data.gender
-            cell3.innerHTML = data.dob;
-            cell4.innerHTML = data.nationality;
-            cell5.innerHTML = data.lang;
-            cell6.innerHTML = data.email;
-            cell7.innerHTML = data.filename;
-            cell8.innerHTML = data.message;
+            cell1.innerHTML = data.timestamp;;
+            cell2.innerHTML = data.project_code
+            cell3.innerHTML = data.line_ref;
+            cell4.innerHTML = data.sku;
+            cell5.innerHTML = data.envent_type;
+            cell6.innerHTML = data.reason;
+            cell7.innerHTML = data.value;
+            cell8.innerHTML = data.invite_code;
              //here i am adding the row
             table.appendChild(row);
     };
