@@ -32,7 +32,26 @@
     <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-	
+	<script>
+		function loadDownReason() {
+			google.script.run.withSuccessHandler(function(ar) {
+				let select =document.createElement("select");
+				select.id = "select1";
+				document.getElementById("myDropdown").appendChild(select);
+				ar.forEach(function(e,i) {
+					let option = document.createElement("option");
+					option.value = i;
+					option.text = e;
+					document.getElementById("select1").appendChild(option);
+					});
+				}).getValuesFromSpreadsheet();
+			};
+		function selected() {
+			const value = document.getElementById("select1").value;
+			console.log(value);
+		}
+	</script>
+			
 	
  <style>
                 label {
@@ -106,7 +125,6 @@
                     <div class="section-padding">
                         <h3>Confirmed</h3>
                         <p>Data has been saved</p>
-                        <div id="add-to-cal"></div>
                     </div>
                 </div>
             </div><!-- /.modal-content -->
@@ -249,14 +267,14 @@
                     <th>Security Code</th>
                 </tr>
 				<tr>
-				    <tr>Timestamp</tr>
-                    <tr>Project Code</tr>
-                    <tr>Line</tr>
-                    <tr>SKU</tr>
-                    <tr>Event</tr>
-                    <tr>Reason</tr>
-                    <tr>Value</tr>
-                    <tr>Security Code</tr>
+				    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
                 </tr>	
 </table>				
 
